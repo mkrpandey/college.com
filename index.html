@@ -1,153 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Airflow Institute</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Airflow Institute</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- ===== INTERNAL CSS ===== -->
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
+<style>
+/* ===== RESET ===== */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: Arial, sans-serif;
+}
 
-    body {
-      line-height: 1.6;
-      scroll-behavior: smooth;
-    }
+body{
+  line-height:1.6;
+  scroll-behavior:smooth;
+  padding-top:80px; /* FIXED HEADER GAP */
+}
 
-    /* ===== HEADER ===== */
-    header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: #0b3c5d;
-      color: #fff;
-      padding: 15px 30px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 1000;
-    }
+/* ===== HEADER ===== */
+header{
+  position:fixed;
+  top:0;
+  width:100%;
+  background:#0b3c5d;
+  color:#fff;
+  padding:15px 30px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  z-index:1000;
+}
 
-    header h1 {
-      font-size: 22px;
-    }
+header h1{
+  font-size:22px;
+}
 
-    nav a {
-      color: #fff;
-      margin-left: 15px;
-      text-decoration: none;
-      font-weight: bold;
-    }
+nav a{
+  color:#fff;
+  margin-left:15px;
+  text-decoration:none;
+  font-weight:bold;
+  transition:0.3s;
+}
 
-    nav a:hover {
-      text-decoration: underline;
-    }
+nav a:hover{
+  color:#ffd700;
+}
 
-    /* ===== SECTIONS ===== */
-    section {
-      padding: 100px 40px;
-      min-height: 100vh;
-    }
+/* ===== SECTIONS ===== */
+section{
+  padding:80px 40px;
+  min-height:100vh;
+}
 
-    #home {
-      background: linear-gradient(to right, #0b3c5d, #328cc1);
-      color: white;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
+h2{
+  margin-bottom:15px;
+  color:#0b3c5d;
+}
 
-    #home h2 {
-      font-size: 40px;
-      margin-bottom: 10px;
-    }
+/* ===== HOME ===== */
+#home{
+  background:linear-gradient(to right,#0b3c5d,#328cc1);
+  color:white;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
 
-    #about {
-      background: #f4f4f4;
-    }
+#home h2{
+  font-size:40px;
+  color:white;
+}
 
-    #courses {
-      background: #fff;
-    }
+/* ===== ABOUT ===== */
+#about{
+  background:#f4f4f4;
+}
 
-    #courses ul {
-      margin-top: 20px;
-    }
+/* ===== COURSES ===== */
+#courses{
+  background:#fff;
+}
 
-    #courses li {
-      background: #0b3c5d;
-      color: white;
-      padding: 10px;
-      margin-bottom: 10px;
-      width: fit-content;
-      border-radius: 5px;
-    }
+.course-box{
+  display:flex;
+  flex-wrap:wrap;
+  gap:15px;
+  margin-top:20px;
+}
 
-    #admission {
-      background: #e8f1f8;
-    }
+.course{
+  background:#0b3c5d;
+  color:white;
+  padding:15px 20px;
+  border-radius:6px;
+}
 
-    #contact {
-      background: #f4f4f4;
-    }
+/* ===== ADMISSION ===== */
+#admission{
+  background:#e8f1f8;
+}
 
-    /* ===== FORM ===== */
-    form {
-      max-width: 400px;
-      margin-top: 20px;
-    }
+/* ===== FORMS ===== */
+form{
+  max-width:400px;
+  margin-top:20px;
+}
 
-    form input, form textarea, form button {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 10px;
-    }
+form input,
+form textarea,
+form button{
+  width:100%;
+  padding:10px;
+  margin-bottom:10px;
+}
 
-    form button {
-      background: #0b3c5d;
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
+form button{
+  background:#0b3c5d;
+  color:white;
+  border:none;
+  cursor:pointer;
+}
 
-    form button:hover {
-      background: #06263b;
-    }
+form button:hover{
+  background:#06263b;
+}
 
-    /* ===== FOOTER ===== */
-    footer {
-      background: #0b3c5d;
-      color: white;
-      text-align: center;
-      padding: 15px;
-    }
+/* ===== CONTACT ===== */
+#contact{
+  background:#f4f4f4;
+}
 
-    /* ===== MOBILE ===== */
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-      }
+/* ===== FOOTER ===== */
+footer{
+  background:#0b3c5d;
+  color:white;
+  text-align:center;
+  padding:15px;
+}
 
-      nav {
-        margin-top: 10px;
-      }
-
-      section {
-        padding: 100px 20px;
-      }
-
-      #home h2 {
-        font-size: 28px;
-      }
-    }
-  </style>
+/* ===== MOBILE ===== */
+@media(max-width:768px){
+  header{
+    flex-direction:column;
+    text-align:center;
+  }
+  nav{
+    margin-top:10px;
+  }
+  section{
+    padding:80px 20px;
+  }
+  #home h2{
+    font-size:28px;
+  }
+}
+</style>
 </head>
 
 <body>
@@ -174,20 +187,20 @@
 <section id="about">
   <h2>About Us</h2>
   <p>
-    Airflow Institute provides high-quality education with practical exposure.
-    Our mission is to make students job-ready with industry-level skills.
+    Airflow Institute provides high-quality education with strong practical
+    exposure. Our goal is to make students job-ready with industry skills.
   </p>
 </section>
 
 <!-- ===== COURSES ===== -->
 <section id="courses">
   <h2>Our Courses</h2>
-  <ul>
-    <li>Web Development</li>
-    <li>Data Analytics</li>
-    <li>Python Programming</li>
-    <li>Full Stack Development</li>
-  </ul>
+  <div class="course-box">
+    <div class="course">Web Development</div>
+    <div class="course">Data Analytics</div>
+    <div class="course">Python Programming</div>
+    <div class="course">Full Stack Development</div>
+  </div>
 </section>
 
 <!-- ===== ADMISSION ===== -->
@@ -195,7 +208,7 @@
   <h2>Admissions Open</h2>
   <p>Fill the form below to apply</p>
 
-  <form onsubmit="submitForm(event)">
+  <form onsubmit="submitAdmission(event)">
     <input type="text" placeholder="Your Name" required>
     <input type="email" placeholder="Email" required>
     <input type="tel" placeholder="Mobile Number" required>
@@ -209,10 +222,10 @@
   <p>Email: info@airflow.com</p>
   <p>Phone: +91 98765 43210</p>
 
-  <form>
-    <input type="text" placeholder="Your Name">
-    <textarea rows="4" placeholder="Your Message"></textarea>
-    <button>Send Message</button>
+  <form onsubmit="submitContact(event)">
+    <input type="text" placeholder="Your Name" required>
+    <textarea rows="4" placeholder="Your Message" required></textarea>
+    <button type="submit">Send Message</button>
   </form>
 </section>
 
@@ -221,14 +234,17 @@
   <p>© 2026 Airflow Institute | All Rights Reserved</p>
 </footer>
 
-<!-- ===== INTERNAL JS ===== -->
 <script>
-  function submitForm(e) {
-    e.preventDefault();
-    alert("🎉 Admission form submitted successfully!");
-  }
+function submitAdmission(e){
+  e.preventDefault();
+  alert("🎉 Admission form submitted successfully!");
+}
+
+function submitContact(e){
+  e.preventDefault();
+  alert("✅ Message sent successfully!");
+}
 </script>
 
 </body>
 </html>
-
